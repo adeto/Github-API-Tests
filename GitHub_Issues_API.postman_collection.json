@@ -1,0 +1,502 @@
+{
+	"info": {
+		"_postman_id": "c754ea3d-3f97-45df-a872-2a365deec539",
+		"name": "GitHub Issues API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Issues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Issue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an Issue",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Missing logo icon on home page\",\r\n    \"body\":\"New logo is created.\",\r\n    \"labels\": [\"bug\", \"importance:critical, type:UI\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit an Issue",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Logo is added (new title)\",\r\n    \"body\": \"New company logo is added.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/1968",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"1968"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close an Issue",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"closed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/1968",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"1968"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all labels for issue #6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/6/labels",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"6",
+						"labels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add comment for issue #6",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\":\"My new comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/6/comments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"6",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all comments for issue #6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/6/comments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"6",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all comments by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/comments/766673904",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"comments",
+						"766673904"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit existing comment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\":\"edited comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/comments/766673904",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"comments",
+						"766673904"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete existing comment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "088e7d775b6a4ecaf7c1193f250300ad0acbfa91",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "qaTest",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/comments/766673904",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"comments",
+						"766673904"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
